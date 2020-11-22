@@ -23,6 +23,7 @@ model.eval()
 print(model)
 
 # An example input you would normally provide to your model's forward() method.
+# inputs = torch.ones((1, 1), dtype=torch.long)
 inputs = torch.ones((1, 1), dtype=torch.long)
 hiddens = torch.ones(1, 1, 128)  # hidden_size=128
 
@@ -34,7 +35,7 @@ print("type(output): ", type(output))
 print("output[0].shape: ", output[0].shape)
 print("output[1].shape: ", output[1].shape)
 
-traced_script_module.save("decoder_last.pt")
+# traced_script_module.save("decoder_last.pt")
 
 # 简单测试一下预测效果, 预测效果基本符合预期，这里seq2seq准是没有学习到
 src_list = [132, 132, 132, 132, 129, 128, 127, 126]       # predict:[125, 125, 125, 125]
