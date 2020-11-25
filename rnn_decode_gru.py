@@ -79,7 +79,7 @@ class DecoderGRU(nn.Module):
         # 这里output_size就是目标语言字典的大小V
         self.out = nn.Linear(hidden_size, output_size)
         # softmax层, 求每一个单词的概率
-        self.softmax = nn.LogSoftmax(dim=1)  # ?
+        self.softmax = nn.LogSoftmax(dim=1)  
 
     def forward(self, input, hidden):
         # input: [1], 一个单词的下标
